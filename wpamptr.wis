@@ -1,0 +1,102 @@
+<WARPIN>
+<HEAD>
+<PCK INDEX=1
+  PACKAGEID="eCo Software\eObjects\Animated Mouse Pointer (PM Hook)\2010\06\20"
+  TARGET="$(OSDIR)\DLL"
+  REQUIRES="eCo Software\Runtime\Base\2009\05\01"
+  LONGFILENAMES
+  TITLE="Animated Mouse Pointer for OS/2"
+  SELECT
+  >Animated Mouse Pointer for OS/2 (Hook Library)</PCK>
+<PCK INDEX=2
+  PACKAGEID="eCo Software\eObjects\Animated Mouse Pointer\2010\06\20"
+  REQUIRES="1"
+  TARGET="$(PROGRAMS)\WPAMPTR"
+  LONGFILENAMES
+  TITLE="Animated Mouse Pointer for OS/2"
+  SELECT
+  REGISTERCLASS="WPAnimatedMousePointer|$(2)\WPAMPTR.DLL"
+  REPLACECLASS="WPMouse|WPAnimatedMousePointer"
+
+  CREATEOBJECT="REPLACE WPProgram|Animated Mouse Pointer for OS/2|<WP_INFO>|TITLE='Animated Mouse Pointer for OS/2';PROGTYPE=PM;EXENAME=VIEW.EXE;PARAMETERS='$(2)\WPAMPTR.HLP Overview';OBJECTID=<WPAMPTR_INFO>;"
+  CREATEOBJECT="REPLACE WPShadow|Animated Mouse Pointer for OS/2|<WP_DESKTOP>|SHADOWID=<WPAMPTR_INFO>;OBJECTID=<WPAMPTR_INFO_SHADOW>;"
+  >Animated Mouse Pointer for OS/2</PCK>
+<PCK INDEX=3
+  PACKAGEID="eCo Software\eObjects\Animated pointers collection\2010\06\20"
+  TARGET="?:\OS2\POINTERS"
+  REQUIRES="2"
+  LONGFILENAMES
+  TITLE="Animated Mouse Pointers collection"
+  SELECT
+  >Animated Mouse Pointer for OS/2 (Pointers collection)</PCK>
+<PCK INDEX=4
+  PACKAGEID="eCo Software\eObjects\Animated mouse pointer (NLS)\2010\06\20"
+  TARGET="$(OSDIR)\LANG"
+  REQUIRES="2"
+  LONGFILENAMES
+  TITLE="Animated Mouse Pointer for OS/2 (NLS)"
+  SELECT
+  >Animated Mouse Pointer for OS/2 (Pointers collection)</PCK>
+</HEAD>
+
+<BODY>
+
+<PAGE INDEX="1" TYPE="README">
+<NEXTBUTTON TARGET=2>~Next</NEXTBUTTON>
+<README EXTRACTFROMPCK="1">file_id.diz</README>
+<TEXT>Animated Mouse Pointer for OS/2
+Select "Next" to continue.
+Select "Cancel" to abort installation.</TEXT>
+</PAGE>
+
+<!-- page 2: changelog -->
+<PAGE INDEX="2" TYPE="README">
+<NEXTBUTTON TARGET=3>~Next</NEXTBUTTON>
+<README EXTRACTFROMPCK="1">whatsnew.txt</README>
+<TEXT>Changelog of Animated Mouse Pointer for OS/2
+
+Select "Next" to continue.
+Select "Cancel" to abort installation.</TEXT>
+</PAGE>
+
+<!-- The TYPE=CONTAINER will list the packages which can be installed. -->
+<PAGE INDEX="3" TYPE="CONTAINER">
+<NEXTBUTTON TARGET="4">~Next</NEXTBUTTON>
+<TEXT>
+Please select the packages which are to be installed.
+</TEXT>
+</PAGE>
+
+
+<PAGE INDEX="4" TYPE="CONFIGURE">
+<NEXTBUTTON TARGET=5>~Next</NEXTBUTTON>
+<TEXT>
+
+Please select additional configuration that WarpIN should perform after installing this archive.
+
+</TEXT>
+</PAGE>
+
+<PAGE INDEX="5" TYPE="TEXT">
+<NEXTBUTTON TARGET="0">I~nstall</NEXTBUTTON>
+<TEXT>
+
+Upgrading from previous versions:
+
+If you're upgrading from a previous version of Animated Mouse Pointer for OS/2, WarpIn will find locked files, and will ask You what to do with them.
+
+If locked files are found, choose "Unlock (DosReplaceModule)", so the old binaries will be replaced with the new versions.
+
+Also, in case of upgrading, WarpIn will find that some classes are already registered, and will ask You what to do.
+
+If a classes is already registered, choose "Yes" to replace that classes with the new binaries.
+
+
+
+Press "Install" to begin installing this archive.
+
+</TEXT>
+</PAGE>
+
+</BODY>
+</WARPIN>

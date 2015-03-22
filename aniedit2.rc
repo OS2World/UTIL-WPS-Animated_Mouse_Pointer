@@ -1,0 +1,4 @@
+#include "wpamptr.rch"
+
+ICON   IDDLG_DLG_ABOUT   ABOUT.ICO
+

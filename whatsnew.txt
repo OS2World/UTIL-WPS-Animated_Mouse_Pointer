@@ -1,0 +1,24 @@
+14/07/2010 Yuri A.Prokushev
+- resource dll build fixed
+- GPL version
+
+19.10.2009 Yuri A.Prokushev
+- WarpIn packaging
+- LANGE support
+
+14.10.2009 Dmitry A.Steklenev
+- The sources now can be compiled via VAC 3.0 and 3.6.
+- The size of the stack of the executables is increased.
+  This prevents crash of the aniedit2.exe.
+- Prevents permanently disabling the "Edit" button in case user
+  try to edit an animated pointer.
+- The properties notebook now have "merlin" style.
+- Prevents of emphasis of NULL container record during
+  context menu activation.
+- Fixed incorrect allocation of the HANDLERDATAINTERNAL structure.
+- Optimized container drawing in the demo mode.
+- Fixed "hide pointer" feature.
+- Removed a lot of unused variables.
+- All structures are aligned to 32-bit boundary and all
+  DosEnterCritSec/DosExitCritSec calls are removed.
+

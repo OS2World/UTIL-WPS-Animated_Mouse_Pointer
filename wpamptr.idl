@@ -1,0 +1,136 @@
+/*
+    Animated Mouse Pointer
+    Copyright (C) 1997 Christian Langanke
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+*/
+/*
+ * wpamptr.idl WPAnimatedMousePointer
+ */
+
+#ifndef wpaptr_idl
+#define wpaptr_idl
+
+#include <wpmouse.idl>
+#include <somcls.idl>
+
+interface M_WPAnimatedMousePointer;
+
+interface WPAnimatedMousePointer : WPMouse
+{
+   ULONG InsertAnimatedMousePointerPage( in HWND hwndDlg );
+
+   #ifdef __SOMIDL__
+   implementation
+   {
+     releaseorder: InsertAnimatedMousePointerPage;
+
+      /*
+       * Class Modifiers
+       */
+      functionprefix = AWptr_;
+      externalprefix = AWptr_;
+      local;
+      majorversion   = 1;
+      minorversion   = 2;
+      filestem       = wpamptr;
+      metaclass      = M_WPAnimatedMousePointer;
+      callstyle      = oidl;
+      dllname        = "wpamptr.dll";
+
+      /*
+       * Internal Instance Variables
+       */
+      PSZ         pszCurrentSettings;
+      HWND        hwndNotebookPage;
+      PRECORDCORE pcnrrec;
+
+      /*
+       * Passthru to our .ih file the following.
+       */
+      passthru C_ih =
+      "#define INCL_ERRORS"
+      "#define INCL_PM"
+      "#define INCL_DOS"
+      "#define INCL_DEV"
+      "#define INCL_WPCLASS"
+      "#define INCL_WINWORKPLACE"
+
+      "#include <os2.h>"
+      "#include <stdlib.h>"
+      "#include <string.h>"
+      "#include <stdio.h>"
+      "#include <somobj.h>"
+      "#include <wpamptr.rch>"
+      "";
+
+      /*
+       * Method Modifiers
+       */
+      wpAddMousePtrPage:               override;
+      wpInitData:                      override;
+      wpUnInitData:                    override;
+      wpSaveState:                     override;
+      wpRestoreState:                  override;
+      wpSetup:                         override;
+
+   };
+   #endif /* __SOMIDL__ */
+};
+
+interface M_WPAnimatedMousePointer : M_WPMouse
+{
+   HMODULE clsQueryResourceModuleHandle();
+   BOOL    clsQueryClassReplaceActive();
+   PSZ     clsQueryHelpLibrary();
+
+   #ifdef __SOMIDL__
+   implementation
+   {
+      releaseorder: clsQueryResourceModuleHandle,clsQueryClassReplaceActive, clsQueryHelpLibrary;
+
+      /*
+       * Class Modifiers
+       */
+      functionprefix = AWptrM_;
+      externalprefix = AWptrM_;
+      local;
+      majorversion   = 1;
+      minorversion   = 2;
+      filestem       = wpamptr;
+      callstyle      = oidl;
+      dllname        = "wpamptr.dll";
+
+      /*
+       * Internal Instance Variables
+       */
+      HMODULE  hmodResource;             // resource module handle
+      HMODULE  hmodClassLib;             // reloaded class lib handle
+      BOOL     fClassReplaceActive;
+      CHAR     szHelpLibrary[ CCHMAXPATH];
+
+      /*
+       * Method Modifiers
+       */
+
+      wpclsInitData:                   override;
+      wpclsUnInitData:                 override;
+      wpclsQuerySettingsPageSize:      override;
+
+   };
+   #endif /* __SOMIDL__ */
+};
+#endif  /* wpamptr_idl */

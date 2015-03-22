@@ -1,0 +1,165 @@
+/*
+    Animated Mouse Pointer
+    Copyright (C) 1997 Christian Langanke
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+*/
+/*
+ * wpwcur.idl  - WPWinCursor
+ *
+ */
+
+#ifndef wpwcur_idl
+#define wpwcur_idl
+
+#include "wpdataf.idl"
+#include <somcls.idl>
+
+interface M_WPWinCursor;
+
+interface WPWinCursor : WPDataFile
+{
+   // neue Methoden
+   VOID  wpRefreshFileIcon();
+   ULONG wpGetAnimationTimeframeValue();
+   BOOL  wpSetAnimationTimeframeValue( in ULONG ulNewValue);
+   ULONG InsertAnimationPage1( in HWND hwndDlg );
+   ULONG InsertAnimationPage2( in HWND hwndDlg );
+   ULONG InsertAnimationPage3( in HWND hwndDlg );
+
+   #ifdef __SOMIDL__
+   implementation
+   {
+      releaseorder:
+         wpRefreshFileIcon,
+         wpGetAnimationTimeframeValue,
+         wpSetAnimationTimeframeValue,
+         InsertAnimationPage1,
+         InsertAnimationPage2,
+         InsertAnimationPage3;
+
+      /*
+       * Class Modifiers
+       */
+      functionprefix = wcur_;
+      externalprefix = wcur_;
+      local;
+      majorversion   = 1;
+      minorversion   = 2;
+      filestem       = wpwcur;
+      metaclass      = M_WPWinCursor;
+      callstyle      = oidl;
+      dllname        = "wpamptr.dll";
+
+      /*
+       * Internal Instance Variables
+       */
+      PICONINFO       piconinfo;
+      HPOINTER        hptr;
+      ULONG           ulDataLen;
+      PVOID           pfs3;
+      ULONG           ulLastStyle;
+
+      HPOINTER       *phpointerTable;
+      ULONG          *pulTimeoutTable;
+      ULONG           ulAnimationCount;
+
+      /*
+       * Passthru to our .ih file the following.
+       */
+      passthru C_ih =
+      "#define INCL_ERRORS"
+      "#define INCL_PM"
+      "#define INCL_DOS"
+      "#define INCL_DEV"
+      "#define INCL_WPCLASS"
+      "#define INCL_WINWORKPLACE"
+
+      "#include <os2.h>"
+      "#include <stdlib.h>"
+      "#include <string.h>"
+      "#include <stdio.h>"
+      "#include <somobj.h>"
+      "";
+
+      /*
+       * Method Modifiers
+       */
+
+      wpAddFile1Page:                  override;
+      wpAddObjectGeneralPage:          override;
+      wpObjectReady:                   override;
+      wpQueryIcon:                     override;
+      wpQueryIconData:                 override;
+      wpSetIcon:                       override;
+      wpSetIconData:                   override;
+
+      wpModifyPopupMenu:               override;
+      wpFilterPopupMenu:               override;
+      wpMenuItemSelected:              override;
+      wpMenuItemHelpSelected:          override;
+
+      wpInitData:                      override;
+      wpUnInitData:                    override;
+
+   };
+   #endif /* __SOMIDL__ */
+};
+
+interface M_WPWinCursor : M_WPDataFile
+{
+   HMODULE clsQueryResourceModuleHandle();
+   PSZ     clsQueryHelpLibrary();
+
+   #ifdef __SOMIDL__
+   implementation
+   {
+      releaseorder: clsQueryResourceModuleHandle,clsQueryHelpLibrary;
+
+      /*
+       * Class Modifiers
+       */
+      functionprefix = wcur_M;
+      externalprefix = wcur_M;
+      local;
+      majorversion   = 1;
+      minorversion   = 2;
+      filestem       = wpwcur;
+      callstyle      = oidl;
+      dllname        = "wpamptr.dll";
+
+      /*
+       * Internal Instance Variables
+       */
+      HMODULE         hmodResource;             // resource module handle
+      HMODULE         hmodClassLib;             // reloaded class lib handle
+      CHAR            szHelpLibrary[ CCHMAXPATH];
+
+      /*
+       * Method Modifiers
+       */
+
+      wpclsQueryStyle:                 override;
+      wpclsQueryInstanceFilter:        override;
+      wpclsQueryInstanceType:          override;
+      wpclsQueryTitle:                 override;
+      wpclsInitData:                   override;
+      wpclsUnInitData:                 override;
+   };
+   #endif /* __SOMIDL__ */
+};
+#endif  /* wpwcur_idl */
+

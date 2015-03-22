@@ -1,0 +1,518 @@
+:userdoc.
+
+.imd title.h
+.imd amptreng.rch
+
+:title.WPAMPTR - V&__VERSION__. - Readme
+
+.*******************************************************************************
+:h1 id='Intro'.Introduction
+.*******************************************************************************
+:p.
+.ce Welcome to
+:font facename='Tms Rmn' size=36x36.:hp3.:color fc=red.
+.ce &__TITLE__. - V&__VERSION__.
+:font facename='Tms Rmn' size=24x24.:color fc=blue.
+.ce by &__AUTHOR__., &__YEAR__. - All rights reserved
+:color fc=default.:font.:ehp3.
+:p.
+.ce This file is only available in English.
+:p.
+Thank you for your interest in :hp2.&__TITLE__.:ehp2..
+:p.
+You can also visit the homepage of :hp2.&__TITLE__.:ehp2. at&colon.
+:sl compact.
+:li.http&colon.//&__HOMEPAGE__.
+:li.http&colon.//&__HOMEPAGE2__.
+:esl.
+:p.
+:p.
+:hp7.Author:ehp7.
+.br
+&__AUTHOR__.
+.br
+email: &__EMAIL__.
+.br
+
+.*******************************************************************************
+:h1.installation - National Language Support
+.*******************************************************************************
+:p.
+Install the program by executing install.cmd.
+:p.
+For information on where to install the program files and the animation resources,
+read this entire file carefully.
+:p.
+The main program package supports English and German.
+The language to be used is detected automatically.
+:p.
+You can install the English version on versions of OS/2 in unsupported languages,
+but be aware that the :hp2.&IDH_IDPNL_USAGE_NBPAGE.:ehp2. of the mouse object and the
+help for that page will change to English text, and will no longer
+correspond to your OS/2 documentation where this page is referenced.
+:p.
+The following languages are supported by external modules, which should be available
+at the same location where you downloaded the main package&colon.
+:parml tsize=15 break=none.
+:pt.:hp2.language:ehp2.
+:pd.:hp2.NLS zip file name:ehp2.
+:pt.dutch
+:pd.amp_h101.zip
+:eparml.
+:p.
+In order to use an NLS package, unzip the NLS zip file for your language to the directory
+where you unzipped the files of the main package before you run the installation program.
+:p.
+You can also visit the homepage of :hp2.&__TITLE__.:ehp2. at&colon.
+:sl compact.
+:li.http&colon.//&__HOMEPAGE__.
+:li.http&colon.//&__HOMEPAGE2__.
+:esl.
+:p.
+where you can get the latest information about supported language versions
+which may become available after the release of this program.
+:p.
+If your language is not supported, and you want
+:hp2.&__TITLE__.:ehp2. to support your language, you can help by translating the
+NLS source files.  If you want to do this, please send an e-mail to the author
+(see section :link reftype=hd viewport dependent refid='Intro'.Introduction:elink.).
+.br
+
+.*******************************************************************************
+:h1.Deinstallation
+.*******************************************************************************
+:p.
+The program can be uninstalled by running INSTALL\REMOVE.CMD in the directory
+where you installed :hp2.&__TITLE__.:ehp2..
+:p.
+:color fc=red.
+:note text='VERY IMPORTANT:'.
+.br
+Once you have installed the program, :hp2.do not delete any program files
+unless you have run the deinstallation program successfully:ehp2..
+:color fc=default.
+.br
+
+.*******************************************************************************
+:h1.Where to put the animation resources and program files
+.*******************************************************************************
+:p.
+The installation program will ask you where you want to install
+the animation resources and program files.
+There are several possibilities, each of which has advantages and disadvantages.
+These are the factors that may influence your decision&colon.
+
+:ul.
+
+.* --------------
+:li.whether you want to use the system-provided pointer sets (which are not animated) together
+with the animation resources.
+.br
+This affects the usability of the program&colon. animation resources are generally
+loaded via a Find dialog; the system-provided static (non-animated) pointer set
+directories take up space in this dialog, and you may not use them any more
+because they are not animated (and thus seem boring after a while).
+
+.* --------------
+:li.whether you want to put the animation resources onto the boot partition.
+.br
+If you use different OS/2 partitions, you might want to put both
+the animation resources and the program files on a partition other than the boot partition,
+because then it is much easier to delete an OS/2 version and install a new one
+(no, I never install a new version over an old one ...).  By the way, I recommend this
+for all program files which are not part of the operating system.
+.br
+This makes even more sense when you have several OS/2 partitions on your PC.
+Then you should have one partition containing all the programs, and that
+is where you should place both the program files and animation
+resources for :hp2.&__TITLE__.:ehp2..
+You install the program for the first partition, and for each of
+the other partitions, you just call :hp2.install\install.cmd:ehp2. within the installed
+file base to register the WPS enhancement class.
+:eul.
+:p.
+There are three options for the location of the animation resources&colon.
+:ul.
+.*------------------------------------------------
+:li.:hp7.?&colon.\OS2\POINTERS:ehp7.
+.br
+This is the default target directory for the animation resources.
+This directory is part of the OS/2 boot partition.
+:p.
+:hp2.Advantages:ehp2.
+:ul compact.
+:li.You can use the system provided static (non-animated) pointer set directories
+together with the animation resources provided by :hp2.&__TITLE__.:ehp2..
+:eul.
+:p.
+:hp2.Disadvantages:ehp2.
+:ul compact.
+:li.The Find dialog is crowded with system-provided static pointer
+set directories which have really long names, and thus use a lot of space.
+These directories may seem useless after a while, because the contained pointer sets are
+not animated; they only serve to make use of the program unwieldy.
+:li.You have placed the animation resources onto the OS/2 boot partition.
+When you format this partition, you have to back up the animation resources, if you
+have modified them.
+:eul.
+
+.*------------------------------------------------
+:li.:hp7.?&colon.\OS2\POINTERS\<subdiretory>:ehp7.
+.br
+I recommend putting the files into a subdirectory of
+:hp2.?&colon.\OS2\POINTERS:ehp2. if you want to put the files
+on the boot partition and do not want to use the system-provided pointer
+set directories.
+:p.
+:hp2.Advantages:ehp2.
+:ul compact.
+:li.You see only the animation resources in the Find dialog.
+The non-animated pointer set directories do not get in the way.
+:eul.
+:p.
+:hp2.Disadvantages:ehp2.
+:ul compact.
+:li.It is more difficult to use the system-provided pointer set directories.
+You won't see them in the Find dialog any more.
+.br
+One way to use the system-provided pointers would be&colon. open the directory :hp2.?&colon.\OS2\POINTERS:ehp2.
+via the drives folder and drag the desired sources onto the container of the
+:hp2.&IDH_IDPNL_USAGE_NBPAGE.:ehp2..
+:li.You have placed the animation resources onto the OS/2 boot partition.
+When you  format this partition, you have to back up the animation resources
+first, if you have modified them.
+:eul.
+
+.*------------------------------------------------
+:li.:hp7.a directory on a partition other than the boot partition:ehp7.
+.br
+This is highly recommended if you have to reinstall OS/2 a lot, or if you
+have different versions of OS/2 installed on your system.  Then you should also
+install the program files on the same partition.
+:p.
+:hp2.Advantages:ehp2.
+:ul compact.
+:li.You see only the animation resources in the Find dialog.
+The non-animated pointer set directories do not get in the way.
+:li.You can format OS/2 partitions without loss of the program files or
+animation resources.  This is especially useful if you have modified the animation resources.
+:eul.
+:p.
+:hp2.Disadvantages:ehp2.
+:ul compact.
+:li.It is more difficult to use the system-provided pointer set directories.
+You won't see them in the Find dialog any more.
+:eul.
+
+
+:eul.
+.br
+
+.*******************************************************************************
+:h1.Long Filename Considerations
+.*******************************************************************************
+:p.
+You can install both the program files and parts of the animation resource
+files in directories with long pathnames.
+:p.
+For the program files, no restrictions exist. They can be installed on both FAT
+and HPFS partitions.
+:p.
+For the animation resources, there are two restrictions&colon.
+
+:ul.
+
+.*---------------
+:li.If the target directory for the animation resources does not support long filenames
+(if you install them onto a FAT partition), the OS/2 pointer set version of the
+animations supplied with &__TITLE__. cannot be unpacked to that directory.
+This is because files included in these pointer set directories have
+long filenames, which are not 8.3 (FAT) compliant.
+.br
+The animations are also available as &IDH_IDPNL_USAGE_RESTYPES_ANIMOUSE.s.
+If you don't want to modify the supplied animations, you can just
+install the &IDH_IDPNL_USAGE_RESTYPES_ANIMOUSE.s.
+.br
+Even on FAT partitions, you can create your own animation with the
+OS/2 :hp2.&IDT_IDTXT_ICON_EDITOR.:ehp2..  You cannot use this animation
+directly in a pointer set directory, which would be nice for testing the animation,
+but you can create your own &IDH_IDPNL_USAGE_RESTYPES_ANIMOUSE., even on a
+FAT drive.  So creating your own animations is more work than when using a HPFS partition.
+:p.
+Refer to
+:sl compact.
+:li.:hp2.&IDH_IDPNL_HOW__BASETEXT.&IDH_IDPNL_HOW_MAKEAND.:ehp2.
+:esl.
+in the online help.
+
+.*---------------
+:li.If you want to create your own animations, the name target directory for
+the animation resources and the pointer set directory of your own animation
+:hp3.may not contain space characters:ehp3..  You have to pay particular attention
+when you create or rename pointer set directories within the WPS.
+This is a restriction of the OS/2 resource compiler, which cannot handle spaces in filenames.
+Note that long filenames without spaces can be used here.
+:eul.
+
+.br
+
+.*******************************************************************************
+:h1.What the install program does
+.*******************************************************************************
+:p.
+:ul.
+:li.Unpacks mouse pointer animations to a user-specified directory on your
+harddisk.  If the directory does not exist, it will be created.
+The default target directory is ?&colon.\OS2\POINTERS, where ?&colon. is the
+OS/2 startup drive.  As :hp2.&__TITLE__.:ehp2. supports
+loading of animation resources from other directories, you may
+want to keep the animation resources away from the OS/2 boot partition
+for several reasons.  If you specify a different target directory,
+this directory will be set up as the default "Animation File Path"
+automatically: this is the directory where "Animated Mouse Pointer for OS/2"
+will search for animation resources.
+You can change this later via the Animation Settings/Properties dialog.
+
+:li.Copies the program files to a user-specified directory on your hard disk.
+If the directory does not exist, it will be created.  The target program
+directory will contain the language-specific files for your
+language or the English version.
+:note.
+If any files in the target directory are locked because a previous program
+version is already installed, the install program offers to handle the
+locked files via a system reboot.  To avoid a system reboot, you can also deinstall
+the old version using the WPS reset option
+(use REMOVE.CMD of the new version for deinstall !)
+and then install the new version also using this WPS reset option.
+
+:li.Registers a WPS enhancement class for WPMouse.  This class "only" replaces,
+and thus enhances, the pointers page of the mouse object's settings notebook,
+while other pages are not affected.
+
+:li.Sets up a program object for Online Help in the "Information" folder
+and a shadow of this program object on the Desktop.
+This will bring up the HLP file (converted to INF by the installation program)
+of :hp2.&__TITLE__.:ehp2. when double-clicked.
+The objects are created during the next WPS startup, which is initiated by either a WPS reset
+or a system reboot.
+:p.
+Please have a closer look at the online help.
+The concept of this program is simple, but it is hard to figure out if
+you don't know what you can do with it.  And believe me, you can do a lot!
+Also, :hp2.&__TITLE__.:ehp2. is
+not perfect.  It still has some limitations, which are also stated in the
+online help.  Something that appears to be a bug may only be a limitation
+which I could not find a technical solution for up to now...
+
+:li.Patches SYSLEVEL.AMP in the program directory to reflect the language version of the
+program that you installed.  To view the contents of this file, execute the :hp2.syslevel:ehp2.
+command.
+The title of the syslevel file should be in the installed language, and the third letter
+of the current CSD level Id should match the third letter of the CSD level Id of the
+OS/2 syslevel file for the base system (?&colon.\OS2\INSTALL\SYSLEVEL.OS2).
+The only exceptions to that rule are&colon.
+:ul compact.
+:li.if your OS/2 version is in your language, but your language
+is not yet supported by the program.  Then the SYSLEVEL title is in English and the third
+letter of the CSD level Id is a zero, because the English version is installed.
+:li.if the third letter of the CSD level Id of the OS/2 syslevel file for the base
+system (?&colon.\OS2\INSTALL\SYSLEVEL.OS2) is a zero, although your OS/2 version is not
+English.
+:eul.
+
+:li.If no locked files have to be handled by the installation program,
+you will be prompted for an optional Workplace Shell reset or a system reboot.
+The WPS restart shortens the installation process, as you can avoid a system reboot in order
+to use the program.   If files are locked, a system reboot is required and
+the WPS reset option is not available.
+.br
+This option is quite useful, because initialization of a WPS replacement
+class only requires a WPS reset rather than a complete system reboot, and this
+takes less time.
+
+:p.
+If you choose to do a WPS reset, the WPS will close all open WPS views of folders,
+object settings, etc., while all other programs (such as OS/2 or DOS windows,
+fullscreen sessions, or PM programs) will continue to run.
+.br
+After the WPS is up again, "Animated Mouse Pointer for OS/2" is ready for use.
+:p.
+If you feel more comfortable doing a complete system shutdown and reboot, you can
+select not to reset the WPS.  Then you need to reboot OS/2 to use the program.
+:note.
+If you use the "WPS reset" option, the WPS will be locked if you use
+the "Lock on startup" option within the Desktop "Lockup" Settings/Properties.
+:eul.
+.br
+
+.*******************************************************************************
+:h1.What the uninstall program does
+.*******************************************************************************
+:p.
+:color fc=red.
+:note text='VERY IMPORTANT:'.
+.br
+If you have installed the program, :hp2.do not delete any program files
+until you have run the deinstallation program successfully:ehp2..
+:color fc=default.
+:p.
+:ul.
+
+:li.Deregisters the enhancement WPS class for WPMouse.
+
+:li.Destroys the program object for Online Help in the "information" folder
+and the shadow on the desktop.
+
+:eul.
+
+.*******************************************************************************
+:h1.important notes about installation/deinstallation
+.*******************************************************************************
+:p.
+:note.
+:ul.
+:li.Neither the install nor the uninstall program makes permanent changes to
+your CONFIG.SYS.  The install program only changes CONFIG.SYS temporarily in order
+to handle locked files, if necessary.
+:p.
+All parts of the program are designed so that a permanent modification is
+not necessary, because I believe that modifying CONFIG.SYS for anything other
+than inserting a DEVICE statement is not good practice.  This would not be
+user-friendly and can be easily avoided.
+
+:li.You can reinstall the animation resources at any time.
+Just unpack the package zip file to a temporary directory
+and run :hp2.install.cmd:ehp2. in the directory where you unzipped the package.
+Select unpacking the animation resources.  After that, the installation program
+will install the program over the installed version.
+Select not to go on with the installation.
+
+:li.The uninstall program does not remove any files from your hard disk.
+
+:li.The "Animation File Path" and the program path, which you can specify in
+the install program or via command line parameters, are stored within OS2.INI
+(application name is "WPAMPTR") and used as default values when executing the
+install program again.  You can delete this information, if desired, but it is recommended
+that you do so only if you have done the following (in this order!)
+:ol compact.
+:li.run the deinstallation program :hp2.install\remove.cmd:ehp2. successfully
+:li. and deleted the program files
+:eol.
+and do not want to use the program any longer.  Otherwise the information in OS2.INI
+will make a future reinstallation easier, because then you won't have to specify these
+values again.
+
+:li.After both install and uninstall, you will be prompted for a reboot or a WPS
+reset for the changes to take effect.  This is necessary for WPS replacement classes.
+The only exception to that rule is&colon.
+If you perform an installation and then, without rebooting or resetting the WPS, uninstall,
+you need not reboot or reset the WPS, because you never used the WPS
+replacement class.
+
+:li.If you execute INSTALL.CMD from the program directory of an installed
+version, the unpacking of animation resources and the xcopy of program
+files is skipped, because everything is (or rather, should be) already there.
+
+:eul.
+.br
+
+.*******************************************************************************
+:h1.Unattended installation/deinstallation
+.*******************************************************************************
+:p.
+For unattended installation and deinstallation you can use the parameter :hp2./Batch:ehp2..
+:p.
+For the installation program, you can specify the install target directories for both
+the program and the animation resource files with other parameters.
+:p.
+Call :hp2.install\install.cmd:ehp2. or :hp2.install\remove.cmd:ehp2. with parameter
+:hp2./?:ehp2. to display help for all supported installation and deinstallation parameters.
+.br
+
+.*******************************************************************************
+:h1.Startup Problems with &__TITLE__.
+.*******************************************************************************
+:p.
+
+This section applies to
+:ul compact.
+:li.users of Object Desktop from Stardock Systems
+:li.users experiencing WPS hangs with "Animated Mouse Pointer for OS/2" V1.0
+:eul.
+:p.
+This version of :hp2.&__TITLE__.:ehp2. implements a workaround for WPS
+initialization problems which may occur when using the program either
+together with Object Desktop or on a system with heavy CPU load and disk I/O
+during WPS startup (many programs started via startup.cmd or Startup folder).
+:p.
+On these systems the WPS may hang when :hp2.&__TITLE__.:ehp2.
+loads the animation and starts to animate the arrow pointer while Object Desktop loads.
+:p.
+Normally WPS objects should not interfere each other on WPS initialization,
+but such effects can also be observed using other pieces of software.
+I tried to find the error and/or to avoid the hang by numerous program
+modifications (modifying animation priority, different synchronisation
+schemes for the animation thread), but that did not work.
+:p.
+Now you can delay the animation initialization for a user-specified amount
+of time so that your system can finish the startup before initializing the pointer animation.
+.br
+Because there is no way of automatically detecting whether all startup programs
+are up already, this delay has to be manually determined by the user.
+:p.
+If your WPS hangs on startup with :hp2.&__TITLE__.:ehp2. installed and
+with mouse pointer animations active before the last shutdown,
+then perform the following steps
+:ul compact.
+:li.do a <CTRL>-<ALT>-<Delete> to restart your system
+:li.boot to the command line by pressing <ALT>-<F1>, when "лллл OS/2" appears in the left upper
+corner on your screen, then press "C" to boot to the command line when the Recovery Choices
+screen appears.
+:li.edit your CONFIG.SYS (you can use TEDIT.EXE for this)
+:p.
+add the following line at the end of CONFIG.SYS
+.br
+:hp2.SET WPAMPTR.ANIMINITDELAY=n:ehp2.
+.br
+where n is the needed delay in seconds.
+.br
+It is recommended that you set n to a high value at first (e.g. 120 for a delay of 2 minutes).
+Later, you can decrease the value you have set with the environment variable
+so that the animation will start right after the WPS startup has finished.
+Alternatively, you can open the "Animation Settings/Properties" dialog
+and modify the setting for "Animation Initialization Delay" to the
+appropriate value.
+
+:note.
+:ul compact.
+:li.The environment variable :hp2.WPAMPTR.ANIMINITDELAY:ehp2.
+is always used as a default value for the setting "Animation Initialization Delay".
+If you store a different value within the "Animation Settings/Properties" dialog than
+specified in the environment variable, the value of the animation setting will be used.
+:li.To explicitly delete the animation setting so that the value
+of the environment variable is used, set the value of the animation setting
+to the default value.
+:li.When the mouse object awaits the delayed initialization of the animation,
+all controls on the "Pointers" page are disabled until the initialization
+is finished.  This is done to prevent the user from modifying settings
+that are later overwritten by the delayed initialization.
+
+:eul.
+:eul.
+.br
+
+.*******************************************************************************
+:h1.your feedback
+.*******************************************************************************
+:p.
+For comments/questions/suggestions, if you want your new animation to be
+integrated in a new version of this program, or if you want to help me support
+a new language in the next version, feel free to e-mail the author.
+(see section :link reftype=hd viewport dependent refid='Intro'.Introduction:elink.).
+
+And now: have fun!
+
+.br
+
+
+:euserdoc.
