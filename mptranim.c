@@ -43,7 +43,7 @@
 #include "macros.h"
 #include "debug.h"
 
-// Timer IDs fr die 2 Timer Variante
+// Timer IDs fÂr die 2 Timer Variante
 #define ANIMATION_TIMER_ID   256
 #define WATCHDOG_TIMER_ID    257
 #define WATCHDOG_TIMER_TIMEOUT DEFAULT_ANIMATION_TIMEOUT
@@ -58,18 +58,18 @@
 static HAB  habAnimationThread = NULLHANDLE;
 static HWND hwndAnimation = NULLHANDLE;
 
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
- *³ Name      : IsDragPending                                              ³
- *³ Kommentar : prft, ob Drag&Drop aktiv ist. Lazy Drag wird ignoriert.   ³
- *³ Autor     : C.Langanke                                                 ³
- *³ Datum     : 10.02.1997                                                 ³
- *³ Žnderung  : 10.02.1997                                                 ³
- *³ aufgerufen: diverse                                                    ³
- *³ ruft auf  : -                                                          ³
- *³ Eingabe   : -                                                          ³
- *³ Aufgaben  : - Variable zurckgeben                                     ³
- *³ Rckgabe  : BOOL - Drag in Process                                     ³
- *ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+/*ÃšÃ„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Â¿
+ *Â³ Name      : IsDragPending                                              Â³
+ *Â³ Comentary : prÂft, ob Drag&Drop aktiv ist. Lazy Drag wird ignoriert.   Â³
+ *Â³ Author    : C.Langanke                                                 Â³
+ *Â³ Date      : 10.02.1997                                                 Â³
+ *Â³ Å½nderung  : 10.02.1997                                                 Â³
+ *Â³ Call      : diverse                                                    Â³
+ *Â³ Calls on  : -                                                          Â³
+ *Â³ Input     : -                                                          Â³
+ *Â³ Tasks     : - Variable zurÂckgeben                                     Â³
+ *Â³ Return    : BOOL - Drag in Process                                     Â³
+ *Ã€Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã™
  */
 
 BOOL IsDragPending( void )
@@ -84,18 +84,18 @@ BOOL IsDragPending( void )
   return fDragPending;
 }
 
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
- *³ Name      : QueryAnimationHab, QueryAnimationHwnd                      ³
- *³ Kommentar : Queryfuntkionen fr statische Variablen                    ³
- *³ Autor     : C.Langanke                                                 ³
- *³ Datum     : 07.06.1996                                                 ³
- *³ Žnderung  : 07.06.1996                                                 ³
- *³ aufgerufen: diverse                                                    ³
- *³ ruft auf  : -                                                          ³
- *³ Eingabe   : -                                                          ³
- *³ Aufgaben  : - Variable zurckgeben                                     ³
- *³ Rckgabe  : HAB / HWND                                                 ³
- *ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+/*ÃšÃ„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Â¿
+ *Â³ Name      : QueryAnimationHab, QueryAnimationHwnd                      Â³
+ *Â³ Cometary  : Queryfuntkionen fÂr statische Variablen                    Â³
+ *Â³ Author    : C.Langanke                                                 Â³
+ *Â³ Date      : 07.06.1996                                                 Â³
+ *Â³ Å½nderung  : 07.06.1996                                                 Â³
+ *Â³ Call      : diverse                                                    Â³
+ *Â³ Calls on  : -                                                          Â³
+ *Â³ Imput     : -                                                          Â³
+ *Â³ Tasks     : - Variable zurÂckgeben                                     Â³
+ *Â³ Return    : HAB / HWND                                                 Â³
+ *Ã€Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã™
  */
 
 HAB  QueryAnimationHab() {
@@ -106,19 +106,19 @@ HWND QueryAnimationHwnd() {
   return hwndAnimation;
 }
 
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
- *³ Name      : AnimationThread                                            ³
- *³ Kommentar : Thread-Funktion fr den Thread, der die Animation          ³
- *³             durchfhrt.                                                ³
- *³ Autor     : C.Langanke                                                 ³
- *³ Datum     : 07.06.1996                                                 ³
- *³ Žnderung  : 07.06.1996                                                 ³
- *³ aufgerufen: diverse                                                    ³
- *³ ruft auf  : -                                                          ³
- *³ Eingabe   : ULONG        - Pointer auf Parameterstruktur               ³
- *³ Aufgaben  : - Animation durchfhren                                    ³
- *³ Rckgabe  : -                                                          ³
- *ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+/*ÃšÃ„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Â¿
+ *Â³ Name      : AnimationThread                                            Â³
+ *Â³ Kommentar : Thread-Funktion fÂr den Thread, der die Animation          Â³
+ *Â³             durchfÂhrt.                                                Â³
+ *Â³ Autor     : C.Langanke                                                 Â³
+ *Â³ Datum     : 07.06.1996                                                 Â³
+ *Â³ Å½nderung  : 07.06.1996                                                 Â³
+ *Â³ aufgerufen: diverse                                                    Â³
+ *Â³ ruft auf  : -                                                          Â³
+ *Â³ Eingabe   : ULONG        - Pointer auf Parameterstruktur               Â³
+ *Â³ Aufgaben  : - Animation durchfÂhren                                    Â³
+ *Â³ RÂckgabe  : -                                                          Â³
+ *Ã€Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã™
  */
 
 VOID _Optlink
@@ -134,7 +134,7 @@ AnimationThread( PVOID Parms )
 
   do
   {
-    // Priorit„t setzen
+    // Prioritâ€žt setzen
     pszAnimPriority = DEBUGSETTINGVAL( SET_ANIMTHREADPRIORITY );
     if( pszAnimPriority != NULL ) {
       ulAnimPriority  = atol( pszAnimPriority );
@@ -155,8 +155,8 @@ AnimationThread( PVOID Parms )
     }
 
     // // msg-Queue von Shutdown Processing abtrennen
-    // *** nicht durchfhren, sonst wird thread einfach gekillt,
-    // *** anstatt daá ein WM_CLOSE/WM_QUIT geschickt wird !!!
+    // *** nicht durchfÂhren, sonst wird thread einfach gekillt,
+    // *** anstatt daÃ¡ ein WM_CLOSE/WM_QUIT geschickt wird !!!
     // WinCancelShutdown( hmq, TRUE);
 
     // hab sichern
@@ -212,21 +212,21 @@ AnimationThread( PVOID Parms )
   _endthread();
 }
 
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
- *³ Name      : ObjectWindowProc                                           ³
- *³ Kommentar : Window-Procedure des Object Window fr die Animation       ³
- *³ Autor     : C.Langanke                                                 ³
- *³ Datum     : 28.07.1996                                                 ³
- *³ Žnderung  : 28.07.1996                                                 ³
- *³ aufgerufen: PM System Message Queue                                    ³
- *³ ruft auf  : -                                                          ³
- *³ Eingabe   : HWND   - window handle                                     ³
- *³             ULONG  - message id                                        ³
- *³             MPARAM - message parm 1                                    ³
- *³             MPARAM - message parm 2                                    ³
- *³ Aufgaben  : - Messages bearbeiten                                      ³
- *³ Rckgabe  : MRESULT - Message Result                                   ³
- *ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+/*ÃšÃ„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Â¿
+ *Â³ Name      : ObjectWindowProc                                           Â³
+ *Â³ Kommentar : Window-Procedure des Object Window fÂr die Animation       Â³
+ *Â³ Autor     : C.Langanke                                                 Â³
+ *Â³ Datum     : 28.07.1996                                                 Â³
+ *Â³ Å½nderung  : 28.07.1996                                                 Â³
+ *Â³ aufgerufen: PM System Message Queue                                    Â³
+ *Â³ ruft auf  : -                                                          Â³
+ *Â³ Eingabe   : HWND   - window handle                                     Â³
+ *Â³             ULONG  - message id                                        Â³
+ *Â³             MPARAM - message parm 1                                    Â³
+ *Â³             MPARAM - message parm 2                                    Â³
+ *Â³ Aufgaben  : - Messages bearbeiten                                      Â³
+ *Â³ RÂckgabe  : MRESULT - Message Result                                   Â³
+ *Ã€Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã™
  */
 
 MRESULT EXPENTRY
@@ -284,7 +284,7 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
       ULONG  ulTimeout = getDefaultTimeout();
       BOOL   fSuccess  = FALSE;
 
-      // Parameter prfen
+      // Parameter prÂfen
       if( ppl == NULL ) {
         break;
       }
@@ -320,13 +320,13 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
                           WATCHDOG_TIMER_ID );
           }
 
-          // ausserdem Demo und Animation zurcksetzen
+          // ausserdem Demo und Animation zurÂcksetzen
           ppl->ulPtrIndex    = 0;
           ppl->ulPtrIndexCnr = 0;
           ResetAnimation( ppl, ( ppl->ulPtrId == SPTR_ARROW ));
         }
       } else {
-        // timer Id fr den betreffenden Mauszeiger ermitteln
+        // timer Id fÂr den betreffenden Mauszeiger ermitteln
         ulTimerId =  ( ppl - ( QueryPointerlist( 0 ))) + 1;
         if( ulTimerId > NUM_OF_SYSCURSORS ) {
           break;
@@ -355,14 +355,14 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
             // timer stoppen
             fSuccess = WinStopTimer( WinQueryAnchorBlock( hwnd ), hwnd, ulTimerId );
 
-            // ausserdem Demo und Animation zurcksetzen
+            // ausserdem Demo und Animation zurÂcksetzen
             ppl->ulPtrIndex    = 0;
             ppl->ulPtrIndexCnr = 0;
             ResetAnimation( ppl, ( ppl->ulPtrId == SPTR_ARROW ));
             break;
         }
 
-        // Flag „ndern
+        // Flag â€žndern
         if( fSuccess ) {
           ppl->fAnimate = fEnable;
         }
@@ -394,7 +394,7 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
 
         // MOUSEMOVED_TIMER_ID  ist kein echter Timer,
         // sondern wird vom hook gesendet, wenn
-        // WM_MOUSEMOVE ber den Hook geht
+        // WM_MOUSEMOVE Âber den Hook geht
         case MOUSEMOVED_TIMER_ID:
         {
           ULONG ulPointerLevel = WinQuerySysValue( HWND_DESKTOP, SV_POINTERLEVEL );
@@ -417,7 +417,7 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
           break;
         }
 
-        // zwei cases fr die 2 timer Variante
+        // zwei cases fÂr die 2 timer Variante
         case ANIMATION_TIMER_ID:
           // Timer anhalten
           WinStopTimer( WinQueryAnchorBlock( hwnd ), hwnd, ANIMATION_TIMER_ID );
@@ -438,19 +438,19 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
           ppl = QueryPointerlist( ulPtrId );
           ulPtrId = ppl->ulPtrId;
 
-          // prfen, ob es der Pfeil Zeiger ist
-          // und Mausknopf 2 gedrckt ist
+          // prÂfen, ob es der Pfeil Zeiger ist
+          // und Mausknopf 2 gedrÂckt ist
           if( ulPtrId == SPTR_ARROW ) {
             fDragPending = IsDragPending();
           }
 
-          // n„chsten Pointer setzen
+          // nâ€žchsten Pointer setzen
           if( ppl->fAnimate ) {
             if( !fDragPending ) {
               SetNextAnimatedPointer( habAnimationThread, ppl, FALSE );
             }
 
-            // ggfs. n„chste Timeout-Zeit setzen
+            // ggfs. nâ€žchste Timeout-Zeit setzen
             {
               // jetzt neue Zeit einstellen
               ulTimeout = ppl->aulTimer[ ppl->ulPtrIndex];
@@ -506,7 +506,7 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
                 // und sichern
                 WinSetWindowULong( hwnd, QWL_USER, i );
 
-                // ggfs. n„chste Timeout-Zeit setzen
+                // ggfs. nâ€žchste Timeout-Zeit setzen
                 if( ppl->fAnimate ) {
                   // Animation sofort weiterlaufen lassen
                   WinStartTimer( WinQueryAnchorBlock( hwnd ), hwnd, ANIMATION_TIMER_ID, 0 );
@@ -529,7 +529,7 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
           rc = RELEASE_DATA_ACCESS();
           break;
 
-        // default case fr die 9 timer Variante
+        // default case fÂr die 9 timer Variante
         default:
           if( !fUse9Timer ) {
             DosBeep( 1000, 10 );       // this may not occur ! (if (!fUse9Timer))
@@ -555,18 +555,18 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
             // Daten ermitteln
             ppl = QueryPointerlist( ulTimerId - 1 );
 
-            // prfen, ob es der Pfeil Zeiger ist
-            // und Mausknopf 2 gedrckt ist
+            // prÂfen, ob es der Pfeil Zeiger ist
+            // und Mausknopf 2 gedrÂckt ist
             if( ppl->ulPtrId == SPTR_ARROW ) {
               fDragPending = IsDragPending();
             }
 
-            // n„chsten Pointer setzen
+            // nâ€žchsten Pointer setzen
             if( !fDragPending ) {
               SetNextAnimatedPointer( habAnimationThread, ppl, FALSE );
             }
 
-            // ggfs. n„chste Timeout-Zeit setzen
+            // ggfs. nâ€žchste Timeout-Zeit setzen
             if( ppl->fAnimate ) {
               // jetzt neue Zeit einstellen
               ulTimeout = ppl->aulTimer[ ppl->ulPtrIndex];
