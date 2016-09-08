@@ -159,7 +159,7 @@ AnimationThread( PVOID Parms )
     // *** anstatt daá ein WM_CLOSE/WM_QUIT geschickt wird !!!
     // WinCancelShutdown( hmq, TRUE);
 
-    // hab sichern
+    // Secure hab
     habAnimationThread = hab;
 
     // Register class
@@ -192,7 +192,7 @@ AnimationThread( PVOID Parms )
     DeinitializePointerlist();
   } while( FALSE );
 
-  // PM Ressourcen abgeben
+  // Add PM Resource
   if( hwndAnimation ) {
     WinDestroyWindow( hwndAnimation );
     hwndAnimation = NULLHANDLE;
@@ -214,9 +214,9 @@ AnimationThread( PVOID Parms )
 
 /*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
  *³ Name      : ObjectWindowProc                                           ³
- *³ Kommentar : Window-Procedure des Object Window fr die Animation       ³
- *³ Autor     : C.Langanke                                                 ³
- *³ Datum     : 28.07.1996                                                 ³
+ *³ Comentary : Window-Procedure des Object Window fr die Animation       ³
+ *³ Author    : C.Langanke                                                 ³
+ *³ Date      : 28.07.1996                                                 ³
  *³ Žnderung  : 28.07.1996                                                 ³
  *³ aufgerufen: PM System Message Queue                                    ³
  *³ ruft auf  : -                                                          ³
@@ -343,7 +343,7 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
             // Timer immer erst stoppen, sonst gehen die Resourcen aus
             WinStopTimer( WinQueryAnchorBlock( hwnd ), hwnd, ulTimerId );
 
-            // timer starten
+            // start timer / timer starten
             ulTimerId = WinStartTimer( WinQueryAnchorBlock( hwnd ),
                                        hwnd,
                                        ulTimerId,
@@ -352,7 +352,7 @@ ObjectWindowProc( HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2 )
             break;
 
           case FALSE:
-            // timer stoppen
+            // stop timer / timer stoppen
             fSuccess = WinStopTimer( WinQueryAnchorBlock( hwnd ), hwnd, ulTimerId );
 
             // ausserdem Demo und Animation zurcksetzen
